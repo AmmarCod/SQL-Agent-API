@@ -40,8 +40,8 @@ db_url = (
 # Initialize the SQLDatabase object
 sql_database = SQLDatabase.from_uri(
     db_url,
-    include_tables=["latestPricebyClient", "luis_bunkerSamples"],  # Ensures this view is available
-    schema="shipergyml",
+    include_tables=["table1", "table2"],  # Ensures this view is available
+    schema="schema",
     view_support=True
 )
 
@@ -75,32 +75,6 @@ class QuestionRequest(BaseModel):
 class QuestionResponse(BaseModel):
     answer: str
     # cost: float
-
-# @app.post("/ask", response_model=QuestionResponse)
-# async def ask_database(request: QuestionRequest):
-#     question = request.question
-#     try:
-#         # Calculate input tokens
-#         input_tokens = len(question.split())
-#         # Execute the query using the agent
-#         answer = agent_executor.run(question)
-#         # Calculate output tokens
-#         output_tokens = len(answer.split())
-#         # Calculate cost
-#         # cost = calculate_cost(input_tokens, output_tokens, model="gpt-4")
-#         # return QuestionResponse(answer=answer, cost=cost)
-#         return QuestionResponse(answer=answer)
-#     except Exception as e:
-#         raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
-
-# # Test endpoint
-# @app.get("/")
-# async def root():
-#     return {"message": "Welcome to the Shipergy SQL Agent API! Use the /ask endpoint to ask questions about the database."}
-
-# # To run the app, use the command: uvicorn filename:app --reload
-# # Replace 'filename' with the name of the Python file, e.g. 'main.py'.
-
 
 @app.post("/ask", response_model=QuestionResponse)
 async def ask_database(request: QuestionRequest):
