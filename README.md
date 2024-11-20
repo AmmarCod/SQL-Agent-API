@@ -16,11 +16,18 @@ This is a FastAPI-based project that allows querying a SQL database using OpenAI
    
 
 2. Setup a virtual enviroment:
-python -m venv venv
-source venv/bin/activate
-3. Install dependencies:pip install -r requirements.txt
-Set environment variables in a .env file.
+   ```bash
+   python -m venv venv
+   venv/scripts/activate
 
-4. Run the application:uvicorn main:app --reload
+4. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+
+5. Set environment variables in a .env file.
+
+6. Run the application:
+   ```bash
+    uvicorn main:app --reload
 
 
