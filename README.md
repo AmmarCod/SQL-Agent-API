@@ -12,6 +12,8 @@ This is a FastAPI-based project that allows querying a SQL database using OpenAI
 
 1. Clone the repository:
    ```bash
+   https://github.com/AmmarCod/SQL-Agent-API.git
+   
 2. Setup a virtual enviroment
 python -m venv venv
 source venv/bin/activate
